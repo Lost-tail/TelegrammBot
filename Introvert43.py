@@ -32,10 +32,10 @@ class Introvert:
         weather = soup.select('#header-space > div.uLCQ > div._3GRJ > div:nth-child(1) > div._2rRP > div:nth-child(2) > div.nUoY > div._3yJY > div > div > div')
         return str(weather).split('>')[1].split('<')[0]
     def time(self):
-        time1 = time.strftime("%H:%M:%S",time.localtime())
+        time1 = time.strftime("%H:%M:%S",time.gmtime(time.time()+10800))
         return time1
     def NY(self):
-        data = time.strftime("%Y.%m.%d",time.localtime())
+        data = time.strftime("%Y.%m.%d",time.gmtime(time.time()+10800))
         time1 = self.time()
         NY_data = ['2020','12','31']
         NY_time = ['23','59','59']
@@ -76,6 +76,9 @@ def main(Bot):
             new_offset=last_update_id+1
                
 
-if __name__ == '__main__':  
-    main(Introvert43)
+if __name__ == '__main__':
+    try:
+        main(Introvert43)
+    except KeyboardInterrupt:
+        exit()
 
