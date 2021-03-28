@@ -49,7 +49,7 @@ class Introvert:
         return a[1:]
         
         
-Introvert43 = Introvert('1489561153:AAHG-SlwURccPLCxu03XofC7zZSCCixqMY8')
+Introvert43 = Introvert('token')
 
 def main(Bot):  
     new_offset = None
